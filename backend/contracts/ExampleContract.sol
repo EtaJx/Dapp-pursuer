@@ -4,7 +4,7 @@ pragma solidity ^0.8.7;
 // we can use the console.log func from hardhat for debugging (like in javascript)
 import "hardhat/console.sol";
 
-// openzeppelin provides libaries of different use cases, this one provides a counter with best practices 
+// openzeppelin provides libaries of different use cases, this one provides a counter with best practices
 // a simple way to get a counter that can only be incremented or decremented. Very useful for ID generation, counting contract activity, among others.
 import "@openzeppelin/contracts/utils/Counters.sol";
 
@@ -41,7 +41,7 @@ contract ExampleContract {
         // memory indicates that the object only lives during the function call, if you want to store it permanently on the blockchain use the storage keyword
         address accAddress = address(msg.sender);
         AccountInfo memory newAccount = AccountInfo(accountId, _name, accAddress);
-        accounts[accountId] = newAccount; 
+        accounts[accountId] = newAccount;
         // trigger event that a new account has been created
         emit accountCreatedEvent(accAddress, _name);
         console.log("NEW ACCOUNT ADDED", newAccount.name);
